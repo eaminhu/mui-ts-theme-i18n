@@ -1,0 +1,24 @@
+{
+    "apps": [
+        {
+            "name": "passto",
+            "script": "npm",
+            "args": "start",
+            "watch": false,
+            "env_production": {
+                "NODE_ENV": "production",
+                "PORT": "3023"
+            }
+        },
+        {
+            "name": "passto-bak",
+            "script": "npm",
+            "args": "start",
+            "watch": false,
+            "env_production": {
+                "NODE_ENV": "production",
+                "PORT": "3024"
+            }
+        }
+    ]
+}

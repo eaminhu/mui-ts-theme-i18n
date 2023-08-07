@@ -1,0 +1,63 @@
+// stylelint-disable
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// stylelint-enabled
+
+#__next {
+    height: 100%;
+    a {
+        cursor: pointer;
+    }
+    .swiper-pagination-bullet-active {
+        @apply bg-primary-main;
+    }
+    .swiper-pagination-bullet {
+        @apply bg-primary-main;
+    }
+}
+
+/** 去除ie edge的密码框默认出现的小眼睛 */
+input[type='password']::-ms-reveal {
+    display: none;
+}
+input[type='password']::-ms-clear {
+    display: none;
+}
+input[type='password']::-o-clear {
+    display: none;
+}
+
+/** 去掉google自动填充密码背景颜色 */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    background-color: transparent;
+    background-image: none;
+    transition: background-color 50000s ease-in-out 0s;
+}
+
+input:-ms-input-placeholder {
+    font-size: 14px;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 14px;
+}
+
+.text-fill-color-transparent {
+    text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+// Chrome浏览器表单自动填充问题解决方案，替换输入框的文本字体 https://juejin.cn/post/7111628488041299982
+@font-face {
+    font-family: text-security-disc;
+    src: url('/fonts/text-security-disc.woff');
+}
+
+.password input {
+    font-family: text-security-disc;
+    -webkit-text-security: disc;
+}
